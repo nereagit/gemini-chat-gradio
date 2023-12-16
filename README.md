@@ -3,3 +3,9 @@ It's December 2023 and Google has made their Gemini API available for free to us
 Google's quickstart guide for python: https://ai.google.dev/tutorials/python_quickstart
 
 Accompanying YouTube video: https://youtu.be/4Za0DrcKwe8
+
+Python libraries:
+gradio
+google-generativeai
+
+Be advised, gradio does not work with Python 3.12, I used 3.9, which worked great.
