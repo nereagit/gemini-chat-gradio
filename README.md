@@ -2,4 +2,4 @@ It's December 2023 and Google has made their Gemini API available for free to us
 
 Google's quickstart guide for python: https://ai.google.dev/tutorials/python_quickstart
 
-Accompanying YouTube video:
+Accompanying YouTube video: https://youtu.be/4Za0DrcKwe8
