@@ -20,7 +20,7 @@ chat = model.start_chat()
 
 iface = gr.ChatInterface(
     fn=gemini_chat, 
-    title='Gemini Chat',
+    title='IE Chat',
     chatbot=gr.Chatbot(height=1000),
     textbox=gr.Textbox(
         placeholder="Message Gemini",
