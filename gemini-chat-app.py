@@ -20,13 +20,13 @@ theme = gr.themes.Base(
 # Function for Gemini chat
 
 
-def gemini_chat(message, history, content_type, student_groups, acceptance_criteria):
+def gemini_chat(message, history, content_type, student_groups, general_acceptance_criteria, student_acceptance_criteria, file):
     # Convert the lists to comma-separated strings
     student_groups_str = ", ".join(student_groups)
-    acceptance_criteria_str = ", ".join(acceptance_criteria)
+    general_acceptance_criteria_str = ", ".join(general_acceptance_criteria)
     # TODO: Implement model.generate_content() function
     response = model.generate_content(
-        f"Generate content where the idea is to rewrite this message: `{message}` using terminology related to each of these student groups: {student_groups_str}. The end result is meant to implement a {content_type}. The acceptance criteria for the generated content are as follows: {acceptance_criteria_str}"
+        f"Produce content by rephrasing the following message: `{message}`, utilizing terminology associated with each of these student groups: {student_groups_str}. The objective is to develop {content_type} content. The format for the generated content should adhere strictly to the following criteria: {general_acceptance_criteria_str}. As a student, I expect the generated content to fulfill the following acceptance criteria: {student_acceptance_criteria}"
     )
     return response.text
 
@@ -60,10 +60,12 @@ iface = gr.ChatInterface(
             "Ensure that the generated content completely mirrors the main message for each selected student group, adapting the examples to reflect their unique industry and career paths.",
             "Maintain the original length and structure of the text without shortening it or converting paragraphs into bullet points.",
             "Generate distinct texts tailored to each student group provided."
-        ], label="Acceptance Criteria", info="Specify your goals with precision:")
+        ], label="General Acceptance Criteria", info="What is the format you want to see in the output?"),
+        gr.Textbox(label="Student Acceptance Criteria", info="What acceptance criteria do you see fit?"),
+        gr.File(label="Upload Files (Optional)", height=50),
+
 
         # gr.Label("What's next?"),
-        # gr.File(label="Upload Files (Optional)"),
         # gr.Dropdown(["English", "Spanish", "French",
         #             "German"], label="Language"),
         # gr.CheckboxGroup(["Introduction", "Body", "Conclusion"],
