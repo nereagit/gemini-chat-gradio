@@ -60,8 +60,6 @@ iface = gr.ChatInterface(
             "Maintain the original length and structure of the text without shortening it or converting paragraphs into bullet points.",
             "Generate distinct texts tailored to each student group provided."
         ], label="Acceptance Criteria", info="Specify your goals with precision:"),
-
-        # gr.Label("What's next?"),
         gr.File(label="Upload Files (Optional)")
         # gr.Dropdown(["English", "Spanish", "French",
         #             "German"], label="Language"),
@@ -69,7 +67,7 @@ iface = gr.ChatInterface(
         #                  label="Content Sections", info="What are the sections of your content?"),
         # gr.Checkbox(label="Include Citations"),
         # gr.Microphone(label="Record Voice Note"),
-    ]
+    ],
     css="footer {visibility: hidden}"
 )
 
