@@ -69,7 +69,10 @@ iface = gr.ChatInterface(
         # gr.Checkbox(label="Include Citations"),
         # gr.Microphone(label="Record Voice Note"),
     ],
-    css="footer {visibility: hidden}"
+    css = """
+        footer {visibility: hidden}
+        label[data-testid='block-label'] {visibility: hidden}
+        """
 )
 
 if __name__ == '__main__':
