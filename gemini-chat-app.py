@@ -48,22 +48,21 @@ iface = gr.ChatInterface(
         placeholder="Message...",
         scale=7
     ),
-    # retry_btn=None,
     undo_btn=None,
     clear_btn=None,
     theme=theme,
     additional_inputs=[
         gr.Dropdown(["Forum", "Lecture", "Exercises"], label="Content Type"),
-        gr.CheckboxGroup(["Business", "Farmers", "Scientist", "Military"],
+        gr.CheckboxGroup(["All","Business", "Engineering", "Science", "Humanities"],
                          label="Student Groups", info="What are your student groups?"),
         gr.CheckboxGroup([
             "Ensure that the generated content completely mirrors the main message for each selected student group, adapting the examples to reflect their unique industry and career paths.",
             "Maintain the original length and structure of the text without shortening it or converting paragraphs into bullet points.",
             "Generate distinct texts tailored to each student group provided."
-        ], label="Acceptance Criteria", info="Specify your goals with precision:")
+        ], label="Acceptance Criteria", info="Specify your goals with precision:"),
 
         # gr.Label("What's next?"),
-        # gr.File(label="Upload Files (Optional)"),
+        gr.File(label="Upload Files (Optional)")
         # gr.Dropdown(["English", "Spanish", "French",
         #             "German"], label="Language"),
         # gr.CheckboxGroup(["Introduction", "Body", "Conclusion"],
@@ -71,6 +70,7 @@ iface = gr.ChatInterface(
         # gr.Checkbox(label="Include Citations"),
         # gr.Microphone(label="Record Voice Note"),
     ]
+    css="footer {visibility: hidden}"
 )
 
 if __name__ == '__main__':
